@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Öğrenme Devam Ediyor · 课文精读与语法整理（交互练习版）</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        background: #f3f5f7;
+        font-family: 'Segoe UI', 'Roboto', 'Noto Sans', 'Helvetica Neue', sans-serif;
+        color: #1e2b37;
+        line-height: 1.85;
+        font-size: 17.5px;
+        padding: 2rem 1rem;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.25);
+        padding: 2.8rem 2.8rem 3.5rem;
+    }
+
+    @media (max-width: 700px) {
+        body { padding: 1rem 0.5rem; font-size: 16.5px; }
+        .container { padding: 1.8rem 1.2rem 2.5rem; border-radius: 16px; }
+    }
+
+    /* ===== 标题层级 ===== */
+    h1 {
+        font-size: 2.3rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: #0b2a3b;
+        border-left: 8px solid #2a7f8f;
+        padding-left: 1.2rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+
+    .subhead {
+        font-size: 1.12rem;
+        color: #4e6b7a;
+        margin-left: 2rem;
+        margin-bottom: 2.5rem;
+        font-weight: 400;
+        border-bottom: 1px solid #d9e3e8;
+        padding-bottom: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #1a4d5e;
+        margin-top: 2.8rem;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #cbdde4;
+        letter-spacing: -0.01em;
+    }
+
+    h3 {
+        font-size: 1.38rem;
+        font-weight: 600;
+        color: #1f5f6e;
+        margin-top: 2.3rem;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        line-height: 1.5;
+    }
+
+    h3::before {
+        content: "◆";
+        color: #2a7f8f;
+        font-size: 0.85rem;
+        opacity: 0.75;
+    }
+
+    h4 {
+        font-size: 1.16rem;
+        font-weight: 600;
+        color: #2a5a6a;
+        margin-top: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+    /* ===== 课文块 ===== */
+    .sentence-block {
+        background: #f9fbfc;
+        border-left: 5px solid #b6d4dd;
+        padding: 1.05rem 1.4rem;
+        margin: 1.1rem 0;
+        border-radius: 0 12px 12px 0;
+        transition: background 0.15s;
+    }
+
+    .sentence-block:hover { background: #eef6f9; }
+
+    .tr {
+        font-weight: 600;
+        color: #0a3c4b;
+        font-size: 1.12rem;
+        display: block;
+        margin-bottom: 0.35rem;
+        line-height: 1.75;
+    }
+
+    .grammar-note {
+        font-size: 0.97rem;
+        color: #3c6575;
+        background: #e7f0f3;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        display: inline-block;
+        margin-top: 0.5rem;
+        line-height: 1.75;
+    }
+
+    .grammar-note i {
+        font-style: normal;
+        font-weight: 500;
+        color: #1c6b7c;
+    }
+
+    /* ===== 表格 ===== */
+    .table-wrap {
+        overflow-x: auto;
+        margin: 1.5rem 0;
+        border-radius: 14px;
+        border: 1px solid #cfe0e6;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1.02rem;
+        background: #ffffff;
+        min-width: 560px;
+    }
+
+    th {
+        background: #d6e7ed;
+        color: #0f3847;
+        font-weight: 600;
+        padding: 0.9rem 1rem;
+        text-align: left;
+        border-bottom: 2px solid #aecbd4;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: 0.82rem 1rem;
+        border-bottom: 1px solid #dde9ed;
+        vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f4fafc; }
+
+    /* ===== 例句列表 ===== */
+    .example-list {
+        list-style: none;
+        margin: 0.6rem 0 1rem;
+        padding-left: 0;
+    }
+
+    .example-list li {
+        position: relative;
+        padding-left: 1.4rem;
+        margin-bottom: 0.75rem;
+        font-size: 1.05rem;
+        color: #16414f;
+        line-height: 1.8;
+    }
+
+    .example-list li::before {
+        content: "▸";
+        color: #2a7f8f;
+        position: absolute;
+        left: 0.1rem;
+        font-weight: 600;
+    }
+
+    .example-list .cn-inline {
+        color: #3f6577;
+        font-size: 0.98rem;
+        display: block;
+    }
+
+    /* ===== -DIK 拆解卡片 ===== */
+    .dik-item {
+        background: #f9fbfc;
+        border-left: 5px solid #b6d4dd;
+        border-radius: 0 12px 12px 0;
+        padding: 1.05rem 1.4rem;
+        margin: 1.05rem 0;
+        transition: background .15s;
+    }
+
+    .dik-item:hover { background: #eef6f9; }
+
+    .dik-sent {
+        display: block;
+        font-weight: 600;
+        color: #0a3c4b;
+        font-size: 1.08rem;
+        margin-bottom: 0.45rem;
+        line-height: 1.75;
+    }
+
+    .dik-break {
+        display: inline-block;
+        font-size: 0.97rem;
+        color: #26586a;
+        background: #e6f1f4;
+        border: 1px solid #cbe1e8;
+        border-radius: 9px;
+        padding: 0.3rem 0.9rem;
+        margin: 0.15rem 0;
+        line-height: 1.75;
+    }
+
+    .dik-cn {
+        display: block;
+        font-size: 1rem;
+        color: #1d4b5a;
+        margin-top: 0.4rem;
+    }
+
+    .dik-cn b { color: #16495a; }
+
+    /* ===== 练习区 ===== */
+    .exercise {
+        background: #f4f8fa;
+        border-radius: 16px;
+        padding: 1.4rem 1.8rem 1.6rem;
+        margin: 1.8rem 0;
+        border: 1px solid #c9dde4;
+    }
+
+    .ex-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.9rem;
+    }
+
+    .ex-head h4 { margin: 0; }
+
+    .ex-tools { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+    .mini-btn {
+        font-family: inherit;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #1d5b6b;
+        background: #dcebf0;
+        border: 1px solid #b9d6e0;
+        border-radius: 30px;
+        padding: 0.22rem 1.05rem;
+        cursor: pointer;
+        transition: background 0.15s;
+        user-select: none;
+        line-height: 1.7;
+    }
+
+    .mini-btn:hover { background: #c6dfe7; }
+
+    .mini-btn.ghost {
+        background: transparent;
+        color: #4a6f7e;
+        border-color: #c3d8e0;
+    }
+
+    .mini-btn.ghost:hover { background: #e4eff3; }
+
+    .exercise ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .exercise li {
+        margin-bottom: 1.4rem;
+        padding-left: 1.4rem;
+        position: relative;
+    }
+
+    .exercise li::before {
+        content: "▹";
+        color: #2a7f8f;
+        position: absolute;
+        left: 0;
+        font-weight: 600;
+    }
+
+    .ex-tr {
+        font-weight: 500;
+        color: #0f3b4b;
+        display: block;
+        font-size: 1.08rem;
+        line-height: 2.05;
+    }
+
+    /* ===== 原形标签 ===== */
+    .proto {
+        display: inline-block;
+        font-size: 0.8rem;
+        color: #4d7a89;
+        background: #e2eef2;
+        border-radius: 20px;
+        padding: 0.05rem 0.75rem;
+        margin-left: 0.5rem;
+        font-weight: 500;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    /* ===== 挖空交互 ===== */
+    .blank {
+        display: inline-block;
+        min-width: 3.4rem;
+        border-bottom: 2px dashed #2a7f8f;
+        color: transparent;
+        cursor: pointer;
+        transition: color 0.2s, background 0.2s, border-color 0.2s;
+        padding: 0 0.28rem;
+        margin: 0 0.1rem;
+        font-weight: 600;
+        border-radius: 4px;
+        background: transparent;
+        user-select: none;
+        line-height: 1.65;
+    }
+
+    .blank.revealed {
+        color: #1a5f6e;
+        border-bottom-style: solid;
+        border-bottom-color: #1a5f6e;
+        background: #e3f0f4;
+    }
+
+    .blank:hover { background: #d6e9ef; }
+
+    /* ===== 翻译按钮与内容 ===== */
+    .translation-wrapper { margin-top: 0.5rem; }
+
+    .show-trans-btn {
+        display: inline-block;
+        font-size: 0.88rem;
+        color: #2a7f8f;
+        background: #e2eef2;
+        padding: 0.16rem 0.95rem;
+        border-radius: 30px;
+        cursor: pointer;
+        border: none;
+        font-family: inherit;
+        font-weight: 500;
+        transition: background 0.15s;
+        user-select: none;
+        line-height: 1.8;
+    }
+
+    .show-trans-btn:hover { background: #c6dfe7; }
+
+    .translation-content {
+        display: none;
+        margin-top: 0.45rem;
+        font-size: 1.01rem;
+        color: #2e5e6e;
+        background: #e9f2f6;
+        padding: 0.62rem 1rem;
+        border-radius: 10px;
+        border-left: 3px solid #2a7f8f;
+        line-height: 1.8;
+    }
+
+    .translation-content.show { display: block; }
+
+    .source {
+        color: #5b7e8c;
+        font-size: 0.86rem;
+        font-style: italic;
+        margin-left: 0.3rem;
+        display: inline-block;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #d2e2e8;
+        margin: 2.4rem 0 1rem;
+    }
+
+    /* ===== 提示 ===== */
+    .hint-badge {
+        font-size: 0.78rem;
+        color: #4a6f7e;
+        background: #dceaf0;
+        padding: 0.1rem 0.75rem;
+        border-radius: 30px;
+        margin-left: 0.4rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .note-box {
+        background: #eaf3f6;
+        border: 1px solid #c3dce4;
+        border-radius: 12px;
+        padding: 0.95rem 1.2rem;
+        margin: 1.2rem 0;
+        font-size: 1rem;
+        color: #26586a;
+        line-height: 1.8;
+    }
+
+    .note-box b { color: #14495a; }
+
+    .intro {
+        color: #4b6b78;
+        margin-bottom: 1.6rem;
+        font-style: italic;
+        font-size: 1.02rem;
+    }
+
+    @media (max-width: 700px) {
+        h1 { font-size: 1.8rem; padding-left: 0.9rem; border-left-width: 6px; }
+        .subhead { margin-left: 1rem; font-size: 1rem; }
+        h2 { font-size: 1.42rem; }
+        h3 { font-size: 1.18rem; }
+        .exercise { padding: 1.1rem 1.1rem 1.3rem; }
+        .ex-tr { font-size: 1rem; }
+        table { font-size: 0.96rem; min-width: 480px; }
+        .proto { margin-left: 0.3rem; font-size: 0.76rem; }
+        .dik-break { font-size: 0.92rem; }
+        .tr { font-size: 1.04rem; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Öğrenme Devam Ediyor</h1>
+    <div class="subhead">学习仍在继续 · 高级土耳其语课文精读与语法整理（交互练习版）</div>
+
+    <!-- ================= 第一部分：课文原文与逐句翻译 ================= -->
+    <h2>一、课文原文与逐句翻译</h2>
+    <p class="intro">
+        说明：以下按原文顺序逐句翻译，并标注主要词汇与语法，便于课文精读、句型积累和考试复习。点击“显示翻译”即可查看中文。
+    </p>
+
+    <!-- ---------- 第一段 ---------- -->
+    <h3>第一段</h3>
+
+    <div class="sentence-block">
+        <span class="tr">Öğretmenimiz sınıfa girer girmez bugün "öğrenme" üzerinde duracağımızı, öğrenmenin hayatımızın her alanında etkili ve önemli olduğunu söyledi.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：我们的老师一走进教室，就告诉我们，今天要重点讨论“学习”这一主题，并指出学习对我们生活的各个领域都有影响，而且十分重要。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>girer girmez：一……就……；üzerinde durmak：着重讨论；-AcAK 从句（duracağımızı）；-mA 名词化（öğrenmenin）。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Çok şaşırmıştık.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：我们当时感到十分惊讶。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>şaşırmıştık 是 -mIştI 过去完成时形式。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Yıllardır bir şeyler öğreniyorduk.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：多年来，我们一直在学习各种各样的知识。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>yıllardır：多年来；öğreniyorduk 是 -IyorDU 过去进行时。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">O kadar çok şey öğrenmiştik ki öğrenmenin bu denli önemli olduğunu unutmuştuk.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：我们已经学了那么多东西，以至于忘记了学习竟然是如此重要的一件事。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>o kadar … ki：如此……以至于……；öğrenmiştik、unutmuştuk：-mIştI；önemli olduğunu：名词性从句。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Her şeyi biliyorduk ve artık öğrenmek yerine öğretecektik.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：我们觉得自己什么都懂了，从此不再需要学习，而是应该去教别人了。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>biliyorduk：-IyorDU；-mAk yerine：与其……不如……（此处表示“不再……而是……”）；öğretecektik：-AcAktI，表示过去视角下的将来或意图。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Buna rağmen öğretmenimiz bizi başa döndürmüş, öğrenmenin ne olduğunu anlatıyordu.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：尽管如此，老师还是把我们带回了起点，重新向我们讲解什么是学习。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>buna rağmen：尽管如此；başa döndürmek：使……回到起点；ne olduğunu：什么是……，名词性从句。</span>
+    </div>
+
+    <!-- ---------- 第二段 ---------- -->
+    <h3>第二段</h3>
+
+    <div class="sentence-block">
+        <span class="tr">"Yürürken, koşarken, otururken, düşünürken yaptıklarımız hep öğrenme sonucudur."</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：“我们在走路、跑步、坐着和思考时所做的一切，都是学习的结果。”</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>-ken：当……时；yaptıklarımız：我们所做的事情（-DIK 分词 + 所属词尾）；sonucudur：是……的结果。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Hatta nasıl öğrendiğimiz bile hayatımız ve kişiliğimiz üzerinde etkili olmaktadır.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：甚至连我们学习的方式，也会对我们的生活与个性产生影响。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>nasıl öğrendiğimiz：我们如何学习；bile：甚至；etkili olmak：产生影响；-mAktA：较正式的持续性表达。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Bunun, kişiler arasında farklılıklar gösterdiğini de öğrenmiştik.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：我们也已经了解到，这种情况在人与人之间存在差异。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>kişiler arasında：在人与人之间；farklılık göstermek：表现出差异；gösterdiğini：-DIK 名词性从句；öğrenmiştik：过去完成时。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Tahmin ettiğiniz gibi biz öğretmen yetiştiren bir fakülteden mezun olmak üzereyiz.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：正如你们所猜想的那样，我们即将从一所培养教师的学院毕业。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>tahmin ettiğiniz gibi：正如你们所猜想的那样；öğretmen yetiştiren：培养教师的（-An 分词）；-mAk üzere：即将。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Bir ay sonra genç bir öğretmen olarak üniversiteyi bitireceğiz ama öğrenme sürecimiz hayat boyu devam edecek.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：一个月后，我们就将完成大学学业，成为年轻教师；但是，我们的学习过程将持续一生。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>bir ay sonra：一个月后；olarak：作为；-AcAK：将来时；hayat boyu：终身；devam etmek：继续。</span>
+    </div>
+
+    <!-- ---------- 第三段 ---------- -->
+    <h3>第三段</h3>
+
+    <div class="sentence-block">
+        <span class="tr">Öğretmenimiz tahtaya bir şeyler yazmaya başladı.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：我们的老师开始在黑板上写一些东西。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>tahtaya：向格；-mAyA başlamak：开始做某事。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Öğrenme çeşitlerini şema hâlinde göstermek istiyordu.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：他想用图表的形式展示学习的不同类型。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>öğrenme çeşitleri：学习的种类；şema hâlinde：以图表的形式；-mAk istemek：想做某事；istiyordu：过去进行时。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Üniversite, biteceği yerde âdeta yeniden başlamıştı, öğrencilik devam ediyordu.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：大学生活仿佛在本该结束的时候又重新开始了，学生时代仍在继续。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>biteceği：将要结束的（-AcAK 分词）；âdeta：仿佛；yeniden başlamak：重新开始；devam ediyordu：过去进行时。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Aniden bize döndü ve kendi öğrenme şeklimizi bilip bilmediğimizi sordu.</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：他突然转向我们，问我们是否了解自己的学习方式。</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>birine dönmek：转向某人；kendi：自己的；bilip bilmediğimizi：是否知道（-Ip … -mA 间接疑问结构）。</span>
+    </div>
+
+    <div class="sentence-block">
+        <span class="tr">Sahi, bizim öğrenme yöntemimiz neydi?</span>
+        <div class="translation-wrapper">
+            <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+            <div class="translation-content">译文：说起来，我们自己的学习方法究竟是什么呢？</div>
+        </div>
+        <span class="grammar-note"><i>语法提示：</i>sahi：说起来、对了；yöntem：方法；neydi：是什么来着（过去时系词）。</span>
+    </div>
+
+    <hr>
+
+    <!-- ================= 第二部分：课文高频语法重点 ================= -->
+    <h2>二、课文高频语法重点</h2>
+
+    <!-- ===== 1. -mIştI ===== -->
+    <h3>1. -mIştI：过去完成时</h3>
+    <p><strong>基本构成：</strong>动词词干 + <b>-mIşt-</b>（t / ti / tu / tü）+ 人称词尾。</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr><th>人称</th><th>土耳其语</th><th>中文</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Ben（我）</td><td>öğrenmiştim</td><td>我当时已经学过了</td></tr>
+                <tr><td>Sen（你）</td><td>öğrenmiştin</td><td>你当时已经学过了</td></tr>
+                <tr><td>O（他/她/它）</td><td>öğrenmişti</td><td>他/她/它当时已经学过了</td></tr>
+                <tr><td>Biz（我们）</td><td>öğrenmiştik</td><td>我们当时已经学过了</td></tr>
+                <tr><td>Siz（你们/您）</td><td>öğrenmiştiniz</td><td>你们/您当时已经学过了</td></tr>
+                <tr><td>Onlar（他们）</td><td>öğrenmişlerdi / öğrenmişti</td><td>他们当时已经学过了</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p><strong>课文例子：文章中的 -mIştI 句子</strong></p>
+
+    <ul class="example-list">
+        <li>Çok şaşırmıştık.<span class="cn-inline">我们当时非常惊讶。动词原形：şaşırmak；构成：şaşır- + -mış + -tı + -k。</span></li>
+        <li>O kadar çok şey öğrenmiştik ki öğrenmenin bu denli önemli olduğunu unutmuştuk.<span class="cn-inline">我们当时学到了那么多东西，以至于忘记了学习竟然如此重要。öğrenmiştik：我们当时已经学过／学到了；unutmuştuk：我们当时已经忘记了。两个词都使用了 -mIştI 形式。</span></li>
+        <li>Bunun, kişiler arasında farklılıklar gösterdiğini de öğrenmiştik.<span class="cn-inline">我们当时也已经了解到，这一点在人与人之间存在差异。动词原形：öğrenmek；构成：öğren- + -miş + -ti + -k。</span></li>
+        <li>Üniversite, biteceği yerde âdeta yeniden başlamıştı.<span class="cn-inline">大学生活本该结束，却仿佛又重新开始了。动词原形：başlamak；构成：başla- + -mış + -tı。</span></li>
+    </ul>
+
+    <div class="note-box">
+        <b>与 -DI 比较：</b>öğrendik（我们学了）／öğrenmiştik（我们当时已经学过）。<br>
+        -mIştI 常用于回顾过去某个时间点之前已经发生的事情或形成的状态。<br>
+        <b>提醒：</b>区分 -DI（过去叙述）与 -mIştI（过去某时间点之前已发生／已形成）。
+    </div>
+
+    <div class="exercise">
+        <div class="ex-head">
+            <h4>练习 <span class="hint-badge">点击虚线处查看答案</span></h4>
+            <div class="ex-tools">
+                <button class="mini-btn" onclick="revealAll(this)">全部显示</button>
+                <button class="mini-btn ghost" onclick="resetAll(this)">重置</button>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <span class="ex-tr">Tam Erzurum'a <span class="blank" data-answer="alışmıştım">alışmıştım</span>, tayinim çıktı.<span class="proto">原形：alışmak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我刚适应埃尔祖鲁姆，就被调职了。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Hatırladığım kadarıyla sınavda en yüksek notu sen <span class="blank" data-answer="almıştın">almıştın</span>.<span class="proto">原形：almak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">据我记得，考试中最高分是你拿的。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Ben geldiğimde yangın çoktan <span class="blank" data-answer="sönmüştü">sönmüştü</span>.<span class="proto">原形：sönmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我来的时候，火早就灭了。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Ben geldiğimde sen çoktan <span class="blank" data-answer="gitmiştin">gitmiştin</span>.<span class="proto">原形：gitmek</span></span>
+                <span class="source">《Yeni Hitit 1 Ders Kitabı》第 75 页</span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我到的时候你已经走了。</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===== 2. -IyorDU ===== -->
+    <h3>2. -IyorDU：过去进行时</h3>
+    <p><strong>基本构成：</strong>动词词干 + <b>-Iyor</b> + -du / -dı / -du / -dü + 人称词尾。</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr><th>人称</th><th>肯定形式</th><th>否定形式</th><th>疑问形式</th><th>否定疑问形式</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Ben（我）</td><td>çalışıyordum</td><td>çalışmıyordum</td><td>çalışıyor muydum?</td><td>çalışmıyor muydum?</td></tr>
+                <tr><td>Sen（你）</td><td>çalışıyordun</td><td>çalışmıyordun</td><td>çalışıyor muydun?</td><td>çalışmıyor muydun?</td></tr>
+                <tr><td>O（他/她）</td><td>çalışıyordu</td><td>çalışmıyordu</td><td>çalışıyor muydu?</td><td>çalışmıyor muydu?</td></tr>
+                <tr><td>Biz（我们）</td><td>çalışıyorduk</td><td>çalışmıyorduk</td><td>çalışıyor muyduk?</td><td>çalışmıyor muyduk?</td></tr>
+                <tr><td>Siz（你们/您）</td><td>çalışıyordunuz</td><td>çalışmıyordunuz</td><td>çalışıyor muydunuz?</td><td>çalışmıyor muydunuz?</td></tr>
+                <tr><td>Onlar（他们）</td><td>çalışıyorlardı</td><td>çalışmıyorlardı</td><td>çalışıyorlar mıydı?</td><td>çalışmıyorlar mıydı?</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p><strong>课文例子：</strong></p>
+
+    <ul class="example-list">
+        <li>Yıllardır bir şeyler öğreniyorduk.<span class="cn-inline">多年来，我们一直在学习一些东西。动词原形：öğrenmek；öğreniyorduk = 我们当时一直在学习。</span></li>
+        <li>Buna rağmen öğretmenimiz bizi başa döndürmüş, öğrenmenin ne olduğunu anlatıyordu.<span class="cn-inline">尽管如此，我们的老师还是让我们回到了起点，并且当时正在讲解什么是学习。动词原形：anlatmak。</span></li>
+        <li>Öğrenme çeşitlerini şema hâlinde göstermek istiyordu.<span class="cn-inline">他／她当时想把学习的不同类型用示意图展示出来。istiyordu = 他／她当时想、当时希望。</span></li>
+        <li>Üniversite, biteceği yerde âdeta yeniden başlamıştı, öğrencilik devam ediyordu.<span class="cn-inline">大学生活本该结束，却仿佛又重新开始了，学生时代仍在继续。devam ediyordu = 当时仍在继续。</span></li>
+    </ul>
+
+    <div class="note-box">
+        <b>与 -mIştI 比较：</b>öğreniyorduk 强调过去持续的过程；öğrenmiştik 强调到过去某时已经学过。<br>
+        <b>提醒：</b>常与 -DI 具体动作搭配，构成背景与事件的叙述。
+    </div>
+
+    <div class="exercise">
+        <div class="ex-head">
+            <h4>练习 <span class="hint-badge">点击虚线处查看答案</span></h4>
+            <div class="ex-tools">
+                <button class="mini-btn" onclick="revealAll(this)">全部显示</button>
+                <button class="mini-btn ghost" onclick="resetAll(this)">重置</button>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <span class="ex-tr">Bir saattir <span class="blank" data-answer="susuyordu">susuyordu</span>, şimdi konuşuyor.<span class="proto">原形：susmak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">他／她沉默了一个小时，现在开始说话了。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Canım <span class="blank" data-answer="sıkılıyordu">sıkılıyordu</span>, evden çıkıp alışverişe gittim.<span class="proto">原形：sıkılmak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我觉得无聊，就出门购物去了。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Adam az kalsın vapurdan <span class="blank" data-answer="düşüyordu">düşüyordu</span>.<span class="proto">原形：düşmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">那个人差点从渡船上掉下去。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Üniversitedeyken sık sık kütüphaneye <span class="blank" data-answer="gidiyordum">gidiyordum</span>.<span class="proto">原形：gitmek</span></span>
+                <span class="source">《Yeni Hitit 1 Ders Kitabı》第 51 页</span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">大学时，我经常去图书馆。</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===== 3. -DIK 名词化 ===== -->
+    <h3>3. -DIK 名词化形式句子</h3>
+    <p><strong>基本构成：</strong>动词词干 + <b>-DIK</b>（dık / dik / duk / dük，常软音化为 -dığ- / -diğ- / -duğ- / -düğ-）+ 所属词尾（+ 格词尾）。</p>
+    <p><strong>功能：</strong>-DIK 形把动词变成名词性成分，可作主语、宾语，或加位格作时间状语；加所属词尾后表示“我所……的／你所……的”等。</p>
+
+    <div class="dik-item">
+        <span class="dik-sent">1. Öğretmenimiz sınıfa girer girmez bugün "öğrenme" üzerinde duracağımızı, öğrenmenin hayatımızın her alanında etkili ve önemli <b>olduğunu</b> söyledi.</span>
+        <span class="dik-break"><b>拆解：</b>olduğunu = ol- + -duk + -u + -nu（k→ğ）。-DIK 形加第三人称所属词尾和宾格，作 söyledi 的宾语。</span>
+        <span class="dik-cn"><b>翻译：</b>我们的老师一走进教室，就告诉我们，今天要重点讨论“学习”这一主题，并指出学习对我们生活的各个领域都有影响，而且十分重要。</span>
+    </div>
+
+    <div class="dik-item">
+        <span class="dik-sent">2. O kadar çok şey öğrenmiştik ki öğrenmenin bu denli önemli <b>olduğunu</b> unutmuştuk.</span>
+        <span class="dik-break"><b>拆解：</b>olduğunu = ol- + -duk + -u + -nu（k→ğ）。作 unutmuştuk 的宾语，表示“忘记了……这件事”。</span>
+        <span class="dik-cn"><b>翻译：</b>我们已经学了那么多东西，以至于忘记了学习竟然是如此重要的一件事。</span>
+    </div>
+
+    <div class="dik-item">
+        <span class="dik-sent">3. Buna rağmen öğretmenimiz bizi başa döndürmüş, öğrenmenin ne <b>olduğunu</b> anlatıyordu.</span>
+        <span class="dik-break"><b>拆解：</b>olduğunu = ol- + -duk + -u + -nu（k→ğ）。与 ne 连用，构成“什么是……”的名词性宾语从句，作 anlatıyordu 的宾语。</span>
+        <span class="dik-cn"><b>翻译：</b>尽管如此，老师还是把我们带回了起点，重新向我们讲解什么是学习。</span>
+    </div>
+
+    <div class="dik-item">
+        <span class="dik-sent">4. "Yürürken, koşarken, otururken, düşünürken <b>yaptıklarımız</b> hep öğrenme sonucudur."</span>
+        <span class="dik-break"><b>拆解：</b>yaptıklarımız = yap- + -tık + -lar + -ımız。-DIK 形加复数词尾和第一人称复数所属词尾，整体作句子主语：“我们所做的事情”。</span>
+        <span class="dik-cn"><b>翻译：</b>“我们在走路、跑步、坐着和思考时所做的一切，都是学习的结果。”</span>
+    </div>
+
+    <div class="dik-item">
+        <span class="dik-sent">5. Hatta nasıl <b>öğrendiğimiz</b> bile hayatımız ve kişiliğimiz üzerinde etkili olmaktadır.</span>
+        <span class="dik-break"><b>拆解：</b>öğrendiğimiz = öğren- + -dik + -imiz（k→ğ）。-DIK 形加第一人称复数所属词尾，作 bile 所修饰的主语：“我们如何学习（这件事）”。</span>
+        <span class="dik-cn"><b>翻译：</b>甚至连我们学习的方式，也会对我们的生活与个性产生影响。</span>
+    </div>
+
+    <div class="dik-item">
+        <span class="dik-sent">6. Bunun, kişiler arasında farklılıklar <b>gösterdiğini</b> de öğrenmiştik.</span>
+        <span class="dik-break"><b>拆解：</b>gösterdiğini = göster- + -dik + -i + -ni（k→ğ）。-DIK 形加第三人称所属词尾和宾格，作 öğrenmiştik 的宾语。</span>
+        <span class="dik-cn"><b>翻译：</b>我们也已经了解到，这种情况在人与人之间存在差异。</span>
+    </div>
+
+    <div class="dik-item">
+        <span class="dik-sent">7. Tahmin <b>ettiğiniz</b> gibi biz öğretmen yetiştiren bir fakülteden mezun olmak üzereyiz.</span>
+        <span class="dik-break"><b>拆解：</b>ettiğiniz = et- + -tik + -iniz（k→ğ）。-DIK 形加第二人称复数／敬称所属词尾，构成 tahmin ettiğiniz gibi：“正如你们所猜想的”。</span>
+        <span class="dik-cn"><b>翻译：</b>正如你们所猜想的那样，我们即将从一所培养教师的学院毕业。</span>
+    </div>
+
+    <div class="dik-item">
+        <span class="dik-sent">8. Aniden bize döndü ve kendi öğrenme şeklimizi bilip <b>bilmediğimizi</b> sordu.</span>
+        <span class="dik-break"><b>拆解：</b>bilmediğimizi = bil- + -me- + -dik + -imiz + -i（k→ğ）。否定 -DIK 形加第一人称复数所属词尾和宾格，作 sordu 的宾语：“我们是否知道／了解”。</span>
+        <span class="dik-cn"><b>翻译：</b>他突然转向我们，问我们是否了解自己的学习方式。</span>
+    </div>
+
+    <div class="exercise">
+        <div class="ex-head">
+            <h4>练习 <span class="hint-badge">点击虚线处查看答案</span></h4>
+            <div class="ex-tools">
+                <button class="mini-btn" onclick="revealAll(this)">全部显示</button>
+                <button class="mini-btn ghost" onclick="resetAll(this)">重置</button>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <span class="ex-tr">(Senin) <span class="blank" data-answer="Söylediğini">Söylediğini</span> kulağın duyuyor mu?<span class="proto">原形：söylemek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">你听见自己说的话了吗？</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Onun satın <span class="blank" data-answer="aldığını">aldığını</span> çok beğendim.<span class="proto">原形：almak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我非常喜欢他买的东西。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Bizim <span class="blank" data-answer="bildiğimizi">bildiğimizi</span> hiç kimse bilmiyordu herhalde.<span class="proto">原形：bilmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">大概没人知道我们知道的事情。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Siz (sizin) <span class="blank" data-answer="anlamadığınızı">anlamadığınızı</span> tekrar sorabilirsiniz.<span class="proto">原形：anlamak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">你们没听懂的地方可以再问一次。</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===== 4. -ken ===== -->
+    <h3>4. -ken：当……时</h3>
+    <p><strong>课文例子：</strong>yürürken（走路时）、koşarken（跑步时）、otururken（坐着时）、düşünürken（思考时）。</p>
+    <p><strong>例句：</strong>Ders çalışırken müzik dinliyorum.（我学习时听音乐。）Eve giderken arkadaşımı gördüm.（我回家路上看到了朋友。）</p>
+    <p><strong>功能：</strong>构成时间状语，说明一个动作发生时，另一个动作正在发生或发生在同一时间段。</p>
+
+    <h4>-ken 的基本形式</h4>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr><th>接续类型</th><th>例子</th><th>主要意思</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>动词 + -(I)rken</td><td>gelirken</td><td>来的时候、在来的路上</td></tr>
+                <tr><td>动词 + -Iyor + ken</td><td>geliyorken</td><td>正在来的时候</td></tr>
+                <tr><td>动词否定形式 + ken</td><td>gelmezken</td><td>不来的时候</td></tr>
+                <tr><td>名词 + ken</td><td>çocukken</td><td>小时候、作为……时</td></tr>
+                <tr><td>元音结尾名词 + yken</td><td>öğrenciyken</td><td>当学生时</td></tr>
+                <tr><td>形容词 + ken</td><td>hastayken</td><td>生病时</td></tr>
+                <tr><td>地点格 + ken</td><td>evdeyken</td><td>在家时</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4>详细说明</h4>
+    <p><strong>1. 接在动词后：</strong>动词词干 + -(I)rken / -ken。当表示“正在做某事时”，最常见的形式是：动词词干 + -(I)rken。</p>
+    <ul class="example-list">
+        <li>Ben ders çalışırken müzik dinlerim.<span class="cn-inline">我学习的时候听音乐。</span></li>
+        <li>Eve giderken arkadaşımı gördüm.<span class="cn-inline">我回家的路上看见了朋友。</span></li>
+        <li>Sen konuşurken seni dinliyordum.<span class="cn-inline">你说话的时候，我正在听你说。</span></li>
+    </ul>
+
+    <p><strong>2. 接在名词、形容词等后：</strong>直接 + -ken。这一类形式通常表示“当……的时候”或“处于……状态时”，不需要先把名词或形容词变成动词。</p>
+    <ul class="example-list">
+        <li>Çocukken çok utangaçtım.<span class="cn-inline">我小时候很害羞。</span></li>
+        <li>Öğrenciyken çok kitap okurdum.<span class="cn-inline">我当学生的时候经常读很多书。</span></li>
+        <li>Gençken burada yaşıyordu.<span class="cn-inline">他年轻时住在这里。</span></li>
+        <li>Hastayken dışarı çıkma.<span class="cn-inline">生病的时候不要出门。</span></li>
+    </ul>
+
+    <div class="exercise">
+        <div class="ex-head">
+            <h4>练习 <span class="hint-badge">点击虚线处查看答案</span></h4>
+            <div class="ex-tools">
+                <button class="mini-btn" onclick="revealAll(this)">全部显示</button>
+                <button class="mini-btn ghost" onclick="resetAll(this)">重置</button>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <span class="ex-tr">Ben <span class="blank" data-answer="öğrenciyken">öğrenciyken</span> çok meraklıydım.<span class="proto">原形：öğrenci</span></span>
+                <span class="source">《Yeni Hitit 1 Ders Kitabı》第 51 页</span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我学生时期非常好奇。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr"><span class="blank" data-answer="Gençken">Gençken</span> daha sık sinemaya gidiyordum.<span class="proto">原形：genç</span></span>
+                <span class="source">《Yeni Hitit 1 Ders Kitabı》第 51 页</span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">年轻时，我更常去电影院。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">O <span class="blank" data-answer="hastayken">hastayken</span> biz burada değildik.<span class="proto">原形：hasta</span></span>
+                <span class="source">《Yeni Hitit 1 Ders Kitabı》第 51 页</span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">他生病的时候我们不在。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Eve <span class="blank" data-answer="giderken">giderken</span> arkadaşımı gördüm.<span class="proto">原形：gitmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我回家的路上看见了朋友。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Sen <span class="blank" data-answer="konuşurken">konuşurken</span> seni dinliyordum.<span class="proto">原形：konuşmak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">你说话的时候，我正在听你说。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr"><span class="blank" data-answer="Öğrenciyken">Öğrenciyken</span> çok kitap okurdum.<span class="proto">原形：öğrenci</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我当学生的时候读很多书。</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===== 5. -Ip ... -mA ===== -->
+    <h3>5. -Ip ... -mA：间接疑问“是否……”</h3>
+    <p><strong>课文例子：</strong>bilip bilmediğimizi（我们是否知道）。</p>
+    <p><strong>构成思路：</strong>肯定动词形式 + -Ip + 否定动词形式 + 所属词尾；再根据句法添加格词尾。</p>
+
+    <div class="note-box">
+        <b>提醒：</b>所属词尾要与从句主语的人称相对应；不要漏掉否定形式。
+    </div>
+
+    <div class="exercise">
+        <div class="ex-head">
+            <h4>练习 <span class="hint-badge">点击虚线处查看答案</span></h4>
+            <div class="ex-tools">
+                <button class="mini-btn" onclick="revealAll(this)">全部显示</button>
+                <button class="mini-btn ghost" onclick="resetAll(this)">重置</button>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <span class="ex-tr">Onun <span class="blank" data-answer="gelip gelmediğini">gelip gelmediğini</span> bilmiyorum.<span class="proto">原形：gelmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我不知道他是否来了。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Öğretmen sınavı <span class="blank" data-answer="geçip geçmediğimizi">geçip geçmediğimizi</span> sordu.<span class="proto">原形：geçmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">老师问我们是否通过了考试。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Ben onlara beni arayan <span class="blank" data-answer="olup olmadığını">olup olmadığını</span> sordum.<span class="proto">原形：olmak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我问他们有没有人在找我。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Onlar bana İsmail'le <span class="blank" data-answer="görüşüp görüşmediğimi">görüşüp görüşmediğimi</span> sordular.<span class="proto">原形：görüşmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">他们问我是否见过伊斯梅尔。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">O bana bu yaz bir yere <span class="blank" data-answer="gidip gidemediğimi">gidip gidemediğimi</span> sordu.<span class="proto">原形：gitmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">他问我这个夏天能不能去那儿。</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===== 6. -mAk yerine ===== -->
+    <h3>6. -mAk yerine：与其……不如……</h3>
+    <p><strong>课文例子：</strong>öğrenmek yerine öğretecektik（我们将不再学习，而是去教别人）。</p>
+    <p><strong>构成：</strong>动词不定式 + yerine + 另一个动作。</p>
+
+    <div class="note-box">
+        <b>提醒：</b>yerine 前通常使用 -mAk 形式；翻译时要体现前后动作的替代关系。
+    </div>
+
+    <div class="exercise">
+        <div class="ex-head">
+            <h4>练习 <span class="hint-badge">点击虚线处查看答案</span></h4>
+            <div class="ex-tools">
+                <button class="mini-btn" onclick="revealAll(this)">全部显示</button>
+                <button class="mini-btn ghost" onclick="resetAll(this)">重置</button>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <span class="ex-tr"><span class="blank" data-answer="Şikâyet etmek yerine">Şikâyet etmek yerine</span> çözüm aramalıyız.<span class="proto">原形：şikâyet etmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">与其抱怨，不如寻找解决办法。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Sınavda <span class="blank" data-answer="kopya çekmek yerine">kopya çekmek yerine</span> dürüst olmalısın.<span class="proto">原形：kopya çekmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">与其作弊，不如诚实。</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===== 7. -mAk üzere ===== -->
+    <h3>7. -mAk üzere：即将……</h3>
+    <p><strong>课文相关表达：</strong>mezun olmak üzereyiz（我们即将毕业）。</p>
+    <p><strong>常见例子：</strong>Tren hareket etmek üzere.（火车即将出发。）Ders başlamak üzere.（课程即将开始。）</p>
+
+    <div class="note-box">
+        <b>注意：</b>-mAk üzere 也可以表示目的“为了……”，需要根据上下文判断。<br>
+        <b>提醒：</b>识别 üzere 的语境含义，不要一律翻译成“即将”。
+    </div>
+
+    <div class="exercise">
+        <div class="ex-head">
+            <h4>练习 <span class="hint-badge">点击虚线处查看答案</span></h4>
+            <div class="ex-tools">
+                <button class="mini-btn" onclick="revealAll(this)">全部显示</button>
+                <button class="mini-btn ghost" onclick="resetAll(this)">重置</button>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <span class="ex-tr"><span class="blank" data-answer="Geri dönmemek üzere">Geri dönmemek üzere</span> evden ayrıldı.<span class="proto">原形：geri dönmek</span></span>
+                <span class="source">《Yeni Hitit 1 Ders Kitabı》第 145 页</span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">他离开家，决定不再回来。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Bir şeyler <span class="blank" data-answer="yemek üzere">yemek üzere</span> mutfağa gitti.<span class="proto">原形：yemek</span></span>
+                <span class="source">《Yeni Hitit 1 Ders Kitabı》第 145 页</span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">他去厨房吃点东西。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Sınavı <span class="blank" data-answer="kazanmak üzere">kazanmak üzere</span> çok çalıştı.<span class="proto">原形：kazanmak</span></span>
+                <span class="source">《Yeni Hitit 1 Ders Kitabı》第 145 页</span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">为了通过考试，他非常努力。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Uçak <span class="blank" data-answer="kalkmak üzere">kalkmak üzere</span>.<span class="proto">原形：kalkmak</span></span>
+                <span class="source">《Yeni Hitit 1 Ders Kitabı》第 193 页</span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">飞机即将起飞。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Doktora <span class="blank" data-answer="yapmak üzere">yapmak üzere</span> Amerika'ya gitti.<span class="proto">原形：yapmak</span></span>
+                <span class="source">《Yeni Hitit 1 Ders Kitabı》第 193 页</span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">他去美国攻读博士。</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===== 8. -Ir ... -mAz ===== -->
+    <h3>8. -Ir ... -mAz：一……就……</h3>
+    <p><strong>课文例子：</strong>sınıfa girer girmez（一走进教室就……）。</p>
+    <p><strong>例句：</strong>Haberi duyar duymaz beni aradı.（他一听到消息就给我打了电话。）Eve gelir gelmez uyudu.（他一回到家就睡了。）</p>
+    <p><strong>功能：</strong>表示两个动作紧接着发生。</p>
+
+    <div class="note-box">
+        <b>提醒：</b>前后使用同一动词的两种形式，第二部分是否定形式 -mAz。
+    </div>
+
+    <div class="exercise">
+        <div class="ex-head">
+            <h4>练习 <span class="hint-badge">点击虚线处查看答案</span></h4>
+            <div class="ex-tools">
+                <button class="mini-btn" onclick="revealAll(this)">全部显示</button>
+                <button class="mini-btn ghost" onclick="resetAll(this)">重置</button>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <span class="ex-tr">Turan, Erman'la Olivier'i <span class="blank" data-answer="görür görmez">görür görmez</span> önlerine çıktı.<span class="proto">原形：görmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">Turan 一看到 Erman 和 Olivier，就走到他们面前。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Gülcan sınav <span class="blank" data-answer="biter bitmez">biter bitmez</span> "Çok şükür!" dedi.<span class="proto">原形：bitmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">Gülcan 考试一结束就说：“谢天谢地！”</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Adam otobüse <span class="blank" data-answer="biner binmez">biner binmez</span> "Levent'e gidiyor mu?" dedi.<span class="proto">原形：binmek</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">那个人一上公交车就问：“去 Levent 吗？”</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ===== 9. o kadar ... ki ===== -->
+    <h3>9. o kadar ... ki：如此……以至于……</h3>
+    <p><strong>课文例子：</strong>O kadar çok şey öğrenmiştik ki...（我们学了那么多东西，以至于……）。</p>
+    <p><strong>功能：</strong>表示程度达到某种结果，后面的 ki 引出结果从句。</p>
+
+    <div class="exercise">
+        <div class="ex-head">
+            <h4>练习 <span class="hint-badge">点击虚线处查看答案</span></h4>
+            <div class="ex-tools">
+                <button class="mini-btn" onclick="revealAll(this)">全部显示</button>
+                <button class="mini-btn ghost" onclick="resetAll(this)">重置</button>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <span class="ex-tr"><span class="blank" data-answer="O kadar yoruldum ki">O kadar yoruldum ki</span> yürüyemiyorum.<span class="proto">原形：yorulmak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我累得走不动了。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr">Film <span class="blank" data-answer="o kadar güzeldi ki">o kadar güzeldi ki</span> üç kez izledim.<span class="proto">原形：güzel</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">这部电影如此精彩，以至于我看了三遍。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr"><span class="blank" data-answer="O kadar hızlı koştu ki">O kadar hızlı koştu ki</span> kimse ona yetişemedi.<span class="proto">原形：koşmak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">他跑得那么快，以至于没有人能追上他。</div>
+                </div>
+            </li>
+            <li>
+                <span class="ex-tr"><span class="blank" data-answer="O kadar çok kitap aldım ki">O kadar çok kitap aldım ki</span> hepsini taşıyamadım.<span class="proto">原形：almak</span></span>
+                <div class="translation-wrapper">
+                    <button class="show-trans-btn" onclick="toggleTrans(this)">显示翻译</button>
+                    <div class="translation-content">我买了那么多书，以至于没法把它们全部搬走。</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+    // 点击挖空处显示 / 隐藏答案
+    document.querySelectorAll('.blank').forEach(function(el) {
+        el.addEventListener('click', function() {
+            if (this.classList.contains('revealed')) {
+                this.classList.remove('revealed');
+            } else {
+                this.classList.add('revealed');
+            }
+        });
+    });
+
+    // 显示 / 隐藏翻译
+    function toggleTrans(btn) {
+        var content = btn.nextElementSibling;
+        if (!content) return;
+        if (content.classList.contains('show')) {
+            content.classList.remove('show');
+            btn.textContent = '显示翻译';
+        } else {
+            content.classList.add('show');
+            btn.textContent = '隐藏翻译';
+        }
+    }
+
+    // 全部显示当前练习答案
+    function revealAll(btn) {
+        var ex = btn.closest('.exercise');
+        ex.querySelectorAll('.blank').forEach(function(el) {
+            el.classList.add('revealed');
+        });
+    }
+
+    // 重置当前练习
+    function resetAll(btn) {
+        var ex = btn.closest('.exercise');
+        ex.querySelectorAll('.blank').forEach(function(el) {
+            el.classList.remove('revealed');
+        });
+    }
+</script>
+</body>
+</html>
